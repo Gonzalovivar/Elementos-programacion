@@ -6,6 +6,7 @@
 package javamalloooo;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,9 +17,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @author Campitos Ley <campitos-ley.com>
  */
 @Controller
+ @CrossOrigin
 @RequestMapping("/")
 public class ControladorCliente {
     
+  
+   
     @RequestMapping(value="/cliente/{nombre}/{email}/{paterno}", method=RequestMethod.GET, headers={"Accept=text/html"})
     @ResponseBody String guardar(@PathVariable String nombre, @PathVariable String email, @PathVariable String paterno )throws Exception{
         Cliente c=new Cliente();
